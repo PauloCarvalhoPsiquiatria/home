@@ -9,8 +9,10 @@
       padding: 0;
       font-family: Arial, sans-serif;
     }
-	.width50 { width: 50%; }
-	.width25 { width: 25%; }
+	
+	.width100 { width: 100%; }
+	.width50  { width: 50%;  }
+	.width25  { width: 25%;  }
 
     .section {
       width: 100%;
@@ -20,20 +22,21 @@
     }
 	  
 	@media (max-width: 768px) {
-		.section {
-		  flex-direction: column;
-		}
+		.section { flex-direction: column; }
+		.section1 { height: 200vh; }
+		.section2 { height: 180vh; }
+		.section3 { height: 90vh;  }
 	}
 
 	@media (min-width: 769px) {
-		.section {
-		  flex-direction: row;
-		}
+		.section { flex-direction: row;    }
+		.section1 { height: 100vh; }
+		.section2 { height: 90vh;  }
+		.section3 { height: 33vh;  }
 	}
 
     .section1 {
-      height: 100vh;
-      background-image: url('background-image.jpg');
+      background-image: url('img/bkg/section1-background-image.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -44,30 +47,35 @@
     }
 
     .section1 .form {
+      text-align: center;
       background-color: rgba(255, 255, 255, 0.8);
+	  margin: 20px;
       padding: 30px;
       border-radius: 5px;
     }
 
     .section2 {
-      height: 90vh;
-      background-color: #bbb;
       background-image: url('image.jpg');
       background-size: cover;
       background-position: center;
     }
 
-    .section2 .image {
-      display: flex;
-      justify-content: center;
-    }
+    .section2 .image, .section2 .image img { height: 100%; }
 
-    .section2 .paragraph {
-      padding: 30px;
+    .section2 .info {
+	  height: 100%;
+      display: flex;
+	  flex-direction: column;
+	  justify-content: space-between;
+      text-align: right;
+      padding: 20px;
     }
+	
+    .section2 .info .slogan     { height: 20%; color: #444; }	
+    .section2 .info .activities { height: 30%; color: #444; }	
+    .section2 .info .cv         { height: 10%; }
 
     .section3 {
-      height: 33vh;
       background-color: #333;
       color: #fff;
       padding: 30px 0;
@@ -83,7 +91,7 @@
 <body>
   <div class="section section1">
     <div class="logo width50">
-      <img src="logo.png" alt="Logo">
+      <img src="img/logo/section1-logo.png" alt="Logo">
     </div>
     <div class="width50">
 		<div class="form"> form
@@ -92,10 +100,21 @@
   </div>
 
   <div class="section section2">
-    <div class="image width50"><img src="photo.png" alt="Photo"></div>
-    <div class="paragraph width50">
-      <h2>Section 2</h2>
-      <p>This is the second section with an image and a paragraph.</p>
+    <div class="image width50"><img src="img/photo/section2-profissionalPhoto.webp" alt="Photo"></div>
+    <div class="info width50">
+		<div class="slogan">
+			<h1>Investir na saúde,<br>zelar pelo bem-estar<br>emocional.</h1>
+		</div>
+		<div class="activities">
+			<h2>Atividades em psiquiatria:</h2>
+			<p>Prática clínica</p>
+			<p>Formação académica</p>
+			<p>Atividade docente</p>
+			<p>Formação em psicoterapia</p>
+		</div>
+		<div class="cv">
+			curriculum
+		</div>
     </div>
   </div>
 
