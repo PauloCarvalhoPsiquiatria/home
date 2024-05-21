@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vertical Sections</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .section {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .section1 {
+      background-image: url('background-image.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .section1 .logo {
+      width: 50%;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section1 .form {
+      width: 50%;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      border-radius: 5px;
+    }
+
+    .section2 {
+      flex-direction: row;
+    }
+
+    .section2 .image {
+      width: 50%;
+      background-image: url('image.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .section2 .paragraph {
+      width: 50%;
+      padding: 30px;
+    }
+
+    .section3 {
+      background-color: #333;
+      color: #fff;
+      padding: 30px 0;
+    }
+
+    .section3 .footer-columns {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .section3 .footer-column {
+      width: 25%;
+    }
+  </style>
+</head>
+<body>
+  <div class="section section1">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <div class="form">
+      <!-- Form content goes here -->
+    </div>
+  </div>
+
+  <div class="section section2">
+    <div class="image"></div>
+    <div class="paragraph">
+      <h2>Section 2</h2>
+      <p>This is the second section with an image and a paragraph.</p>
+    </div>
+  </div>
+
+  <div class="section section3">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h3>Column 1</h3>
+        <!-- Column 1 content goes here -->
+      </div>
+      <div class="footer-column">
+        <h3>Column 2</h3>
+        <!-- Column 2 content goes here -->
+      </div>
+      <div class="footer-column">
+        <h3>Column 3</h3>
+        <!-- Column 3 content goes here -->
+      </div>
+      <div class="footer-column">
+        <h3>Column 4</h3>
+        <!-- Column 4 content goes here -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>
