@@ -3,22 +3,33 @@
 <head>
   <title>Paulo Carvalho Psiquiatria</title>
   <style>
-	  /* width breakpoints (-) 480 (+ -) 768 px (+) */
+	  /* width breakpoints (-) _colunas_ 768 px _linhas_ (+) */
     body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
     }
-	.width50 {       width: 50%;  }
-	.width25 {       width: 25%;  }
+	.width50 { width: 50%; }
+	.width25 { width: 25%; }
 
     .section {
       width: 100%;
       display: flex;
-      flex-direction: row;
       justify-content: center;
       align-items: center;
     }
+	  
+	@media (max-width: 768px) {
+		.section {
+		  flex-direction: column;
+		}
+	}
+
+	@media (min-width: 769px) {
+		.section {
+		  flex-direction: row;
+		}
+	}
 
     .section1 {
       height: 100vh;
@@ -44,7 +55,6 @@
       background-image: url('image.jpg');
       background-size: cover;
       background-position: center;
-      flex-direction: row;
     }
 
     .section2 .image {
