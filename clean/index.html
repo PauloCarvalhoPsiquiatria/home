@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Paulo Carvalho Psiquiatria</title>
+  <link rel="stylesheet" href="form.css">
   <style>
 	  /* width breakpoints (-) _colunas_ 768 px _linhas_ (+) */
     body {
@@ -11,8 +12,6 @@
     }
 	
 	.width100 { width: 100%; }
-	.width50  { width: 50%;  }
-	.width25  { width: 25%;  }
 
     .section {
       width: 100%;
@@ -23,46 +22,62 @@
 	  
 	@media (max-width: 768px) {
 		.section { flex-direction: column; }
-		.section1 { height: 200vh; }
-		.section2 { height: 180vh; }
+		.section1 { height: 770px; }
+		.section1 .logo { height: 120px; }
+		.section2 { height: 770px; }
+		.section2 .image { height: 40%; }
+		.section2 .image img { margin-left: 15% }
 		.section3 { height: 90vh;  }
+	.width50  { width: 90%;  }
+	.width25  { width: 90%;  }
 	}
 
 	@media (min-width: 769px) {
 		.section { flex-direction: row;    }
-		.section1 { height: 100vh; }
-		.section2 { height: 90vh;  }
+		.section1 { height: 700px; }
+		.section2 { height: 690px;  }
+		.section2 .image { height: 100%; }
 		.section3 { height: 33vh;  }
+	.width50  { width: 50%;  }
+	.width25  { width: 25%;  }
 	}
 
     .section1 {
-      background-image: url('img/bkg/section1-background-image.jpg');
+      background-image: url('img/bkg/section1-background-shadow.png'),  url('img/bkg/section1-background-image.jpg');
       background-size: cover;
       background-position: center;
     }
 
     .section1 .logo {
       text-align: center;
-      margin-bottom: 50px;
     }
 
     .section1 .form {
-      text-align: center;
       background-color: rgba(255, 255, 255, 0.8);
+      text-align:left;
+	  height: 550px;
 	  margin: 20px;
-      padding: 30px;
-      border-radius: 5px;
+      padding: 10px;
+      border-radius: 20px;
     }
+	
+	.section1 .form .head     { height: 100px }
+	.section1 .form .body     { height: 350px }
+	.section1 .form .submit   { height: 50px;  margin-top: 10px; float: left }
+	.section1 .form > form > div      { margin-left: 20px; margin-right: 20px }
 
     .section2 {
-      background-image: url('image.jpg');
+	  margin-top: 20px;
+      background-image: url('img/photo/section2-photo-shadow.svg');
       background-size: cover;
       background-position: center;
     }
 
-    .section2 .image, .section2 .image img { height: 100%; }
+    .section2 .image { margin-left: 20px; }
+    .section2 .image img { height: 100%; }
 
     .section2 .info {
+	  color: #444;
 	  height: 100%;
       display: flex;
 	  flex-direction: column;
@@ -71,21 +86,34 @@
       padding: 20px;
     }
 	
-    .section2 .info .slogan     { height: 20%; color: #444; }	
+    .section2 .info .slogan     { height: 20%; color: #444; margin-top: 10px; font-size: 2rem; line-height: 1.5 }	
     .section2 .info .activities { height: 30%; color: #444; }	
-    .section2 .info .cv         { height: 10%; }
+	.section2 .info .cv         {  height: 10%; }
+    .section2 .info #cvButton   {
+	  width: 200px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 10px;
+	  border: 0px;
+	  }
+	.section2 .info > div 		{ margin-left: 10px; margin-right: 10px; }
 
     .section3 {
-      background-color: #333;
+      background-color: #7991a5ff;
       color: #fff;
       padding: 30px 0;
       justify-content: space-around;
+	  align-items: start;
     }
 
     .section3 .footer-column {
             margin: 10px;
-            text-align: center;
+            text-align: left;
+			line-height: 1.2;
     }
+	
+	
+	@media (max-width: 1000px) { .section3 .footer-column .emailLabel{ display:block; }}
   </style>
 </head>
 <body>
@@ -93,47 +121,78 @@
     <div class="logo width50">
       <img src="img/logo/section1-logo.png" alt="Logo">
     </div>
-    <div class="width50">
-		<div class="form"> form
-		</div>
-    </div>
+    <div class="form width50">
+		  <form action="action_page.php">
+			<div class="head">
+			  <h2 style="color: #7991a5ff;">Agendar consulta</h2>
+			  <p style="color: #676767;">Cuide da sua mente, cuide de si.<br>Marque hoje a sua consulta de psiquiatria.</p>
+		    </div>
+			<div class="body">
+				<div>
+					<label for="name">Nome:</label>
+					<input type="text" id="name" name="name" placeholder="...">
+				</div>
+				<div>
+					<label for="email">E-mail:</label>
+					<input type="text" id="email" name="email" placeholder="...">
+				</div>
+				<div>
+					<label for="data">Data:</label>
+					<input type="text" id="data" name="data" placeholder="...">
+				</div>
+				<div>
+					<label for="hora">Hora:</label>
+					<input type="text" id="hora" name="hora" placeholder="...">
+				</div>
+			</div>
+			<div class="submit">
+				<input type="submit" value="Pedir marcação">
+			</div>
+		  </form>
+	</div>
   </div>
 
   <div class="section section2">
     <div class="image width50"><img src="img/photo/section2-profissionalPhoto.webp" alt="Photo"></div>
     <div class="info width50">
 		<div class="slogan">
-			<h1>Investir na saúde,<br>zelar pelo bem-estar<br>emocional.</h1>
+			<p>Investir na saúde,<br>zelar pelo bem-estar<br>emocional.</p>
 		</div>
 		<div class="activities">
-			<h2>Atividades em psiquiatria:</h2>
+			<p>Atividades em psiquiatria:</p>
 			<p>Prática clínica</p>
 			<p>Formação académica</p>
 			<p>Atividade docente</p>
 			<p>Formação em psicoterapia</p>
 		</div>
 		<div class="cv">
-			curriculum
+			<button id="cvButton">
+			Percurso profissional
+			</button>
 		</div>
     </div>
   </div>
 
   <div class="section section3">
       <div class="footer-column width25">
-        <h3>Column 1</h3>
-        <!-- Column 1 content goes here -->
+        <img src="img/logo/section3-logo-white.png" alt="LogoWhite">
       </div>
       <div class="footer-column width25">
-        <h3>Column 2</h3>
-        <!-- Column 2 content goes here -->
+        <h4>Contactos</h4>
+		<a href="mailto:paulocarvalhopsiquiatria@gmail.com" style="text-decoration:none; color: white; width: 100%">
+			<span class="emailLabel">paulocarvalhopsiquiatria</span><span class="emailLabel">@gmail.com</span>
+		</a>
       </div>
       <div class="footer-column width25">
-        <h3>Column 3</h3>
-        <!-- Column 3 content goes here -->
+        <h4>Serviços</h4>
+        <p>Psiquiatria<br>
+			Psicoterapia<br>
+			Psicodrama</p>
       </div>
       <div class="footer-column width25">
-        <h3>Column 4</h3>
-        <!-- Column 4 content goes here -->
+        <h3>Horário</h3>
+        <p>Segunda a Sexta<br>
+			9.00 às 18.00h</p>
     </div>
   </div>
 </body>
